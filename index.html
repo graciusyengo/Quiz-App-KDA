@@ -1,16 +1,93 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APP QUIZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+  <!-- FORMULAIRE 1 CONTAINER1-->
+  <main class="quiz">
+    <div class="ecranDeBienvenue">
+
+      <form id="formulairePrincipal" action="/">
+        <h1 class="MainTitleQuiz">Java script</h1>
+        <p>Evaluer vos connaissance en javaScript en repondant aux question que nous avons spécialement selectioné pour
+          vous c'est fun et c'est gratuit</p>
+        <div class="input-control">
+          <label for="username">Nom</label>
+          <input id="username" name="username" type="text">
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="text">
+          <div class="error"></div>
+        </div>
+        <button type="submit" id="beginButton">Commencer</button>
+      </form>
+    </div>
+    <!--FORMULAIRE2 CONTAINER2-->
+    <div class="containerDeQuestions">
+      <div id="formulaireDeQuestions">
+        <!-- /// AVERTISSEMENT: ON A BESOIN DE CE BLOCK
+          /// POUR LA VISUALISATION
+<h2 >quel est le type de fichiers java script</h2>
+        <div class="divFlexLabel">
+          <label class="labelQuestion"> question <span class="numeroQuestions">x</span>/ <span class="nombreQuestions">x</span></label>
+          <span class="labelTimer">🕖 60s</span>
+        </div>
+        <div class="progress">
+          <div class="progressInner">
+          </div>
+        </div>
+        <div class="reponseQuestion">
+          <input type="radio" id="formulaireQuestionRadio" name="choix" class="reponse">
+          <label for="formulaireQuestionRadio" name="radio" >.jxs</label>
+        </div>
+        <div class="reponseQuestion">
+          <input type="radio" id="
+            formulaireQuestionRadio" name="choix"  class="reponse">
+          <label for="formulaireQuestionRadio"> .j</label>
+        </div>
+        <div class="reponseQuestion">
+          <input type="radio" id="formulaireQuestionRadio" name="choix" class="reponse">
+          <label for="formulaireQuestionRadio"> ej</label>
+        </div>
+        <div class="reponseQuestion">
+          <input type="radio" id="formulaireQuestionRadio" name="choix" class="reponse">
+          <label for="formulaireQuestionRadio" >js</label>
+        </div>
+        <div class="flexButton">
+          <button id="exitButton"> quitter</button>
+          <button id="suivantButton"> suivant</button>
+        </div>
+     -->
+
+      </div>
+    </div>
+    <div class="ecranDeResultat">
+      <h2 class="prenomUtilisateurs"> gracius</h2>
+
+      <label class="emailDesUtilisateurs"> hhhhhhhh@gmail. </label>
+      <!-- <img src="echec.png" alt="sucess green" id="echec" /> -->
+      <img src="reussite.png" alt="sucess green" id="reussite" />
+      <p> <span class="nombreCorrects">x</span>/<span class="nombreQuestions">x</span></p>
+      <button type="submit" id="accueilButton">Accueil</button>
+    </div>
+
+
+
+  </main>
+  <script defer src="./script.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,272 @@
-html, body {
-  height: 100%;
-  width: 100%;
+*{
+  box-sizing: border-box;
+  padding: 0;
+    margin: 0;
 }
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+   min-height: 100vh;
+   background:linear-gradient(to right, #85f6b8,#8ed9ebd9);
+}
+.quiz{
+  display: flex;
+  flex-direction: column;
+}
+.ecranDeBienvenue{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0, 0.3);
+  width: 400px;
+  height:fit-content;
+  margin: 20px 0 40px 0;
+}
+
+#formulairePrincipal {
+  padding: 30px 40px;
+}
+.mainTitleQuiz {
+  text-align: center;
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 32px;   
+}
+p{
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  color: #555555;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;  
+}
+
+#formulairePrincipal button {
+  cursor: pointer;
+  background-color: #028A3D;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  display: block;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px auto ;
+  width: 226px;
+}
+
+.input-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-control input {
+  border: 2px solid #f0f0f0;
+border-radius: 4px;
+display: block;
+font-size: 12px;
+padding: 10px;
+width: 100%;
+}
+
+.input-control input:focus {
+  outline: 0;
+}
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 9px;
+  height: 13px;
+}
+
+.brGreen{
+  border:1px solid #09c372 !important;
+}
+
+
+.containerDeQuestions{
+  display: none;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0, 0.3);
+  width: 400px;
+  height:fit-content;
+  margin: 20px 0 40px 0;
+
+}
+.reponse{
+  border: 1px solid rgb(136, 70, 84)
+
+}
+
+.reponseQuestion{
+  border: 1px solid #f0f0f0;
+  padding: 10px;
+}
+
+.titreQuestion{
+  margin-top: 18px;
+  margin-bottom: 22px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    /* or 158% */
+    
+    text-align: center;
+    
+    color: #555555;     
+    }
+
+.divFlexLabel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 0.7;
+}
+.labelQuestion{
+  margin-left: 10px;
+  font-size: 14px;
+}
+.labelTimer{
+  margin-right: 10px;
+  font-size: 14px;
+}
+.progress{
+  width: 370px;
+  height: 10px;
+  border: 1px solid #f0f0f0 ;
+  background: white;
+  margin: 12px 30px  10px 10px;
+  position: relative;
+}
+.progressInner{
+  background: green;
+  position: absolute;
+  width:100%;
+  height: 100%;
+
+}
+.reponseQuestion{
+  border: 1px solid solid #f0f0f0; ;
+  margin: 20px 20px 20px 20px;
+}
+.reponseQuestion label{
+  margin-left: 10px;
+}
+input{
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #dddddd ;
+  border-radius: 25px;
+}
+input:checked{
+  background-color: green;
+}
+.answer__correct{
+  background-color: green;
+}
+.answer__wrong{
+  background-color: red;
+}
+
+.flexButton{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.suivantButton{
+  background: #73ac3e;
+  border-radius: 4px;
+  height: 42px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px ;
+  width: 90%;
+}
+.exitButton{
+  color: #fff;
+  border-radius: 4px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px ;
+  width: 90%;
+  background: orange;
+  height: 42px;
+}
+
+.ecranDeResultat {
+ display: none;
+flex-direction: column;
+align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0, 0.3);
+  width: 400px;
+  height:400px;
+  margin: 20px 0 40px 0;
+}
+.ecranDeResultats{
+  display: none;
+}
+
+
+.centerPrenom{
+  margin-top: 50px;
+  margin-bottom: 23px;
+  text-align: center;
+
+}
+.centerEmail{
+  text-align: center;
+  margin:0 auto;
+}
+
+img {
+  width : 150px;
+  height : 150px;
+ 
+  max-width : 200px;
+  max-height : 150px;
+  
+  } 
+ 
+  .hidden{
+    display: none;
+  }
+  
+   #accueilButton{
+    cursor: pointer;
+    background: #0880D6;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 12px;
+  width: 80px;
+  }
+
+
+
+
+
+  
+      
