@@ -317,15 +317,10 @@ const questionsObject = [
     {
         question: "Que renvoie l’ex´ecution du code alert(4 >= 4 && (2 > 3 || (6%3 < 1))) ; ? ",
         reponses: ["erreur "," Undefined ","false","true"],
-        reponseId: "id4"
-        
-    },
-
-    
-    
+        reponseId: "id4"    
+    }, 
 
 ];
-
 for (let i = 0; i < questionsObject.length; i++) {
     const elementQuestion = questionsObject[i];
     const q = new Question(elementQuestion.question, elementQuestion.reponses, elementQuestion.reponseId, i);
@@ -344,7 +339,6 @@ let elNombreQuestions = document.querySelectorAll(".nombreQuestions")
 console.log(elNombreQuestions);
 elNombreQuestions.forEach(function (nombreQuestion) {
     nombreQuestion.textContent = quiz.questions.length;
-
 })
 const formulairePrincipal = document.getElementById('formulairePrincipal');
 const username = document.getElementById('username');
@@ -358,33 +352,26 @@ const ring = () => {
     audio.src = "./suspect.mp3"
     audio.play()
 }
-
 formulairePrincipal.addEventListener('submit', e => {
     e.preventDefault();
     const name = formulairePrincipal.elements[0].value;
     const email = formulairePrincipal.elements[1].value;
     validateInputs()
-
 })
 const setError = (element, message) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
-
     errorDisplay.innerText = message;
     inputControl.classList.add('error');
     inputControl.classList.remove('success')
 }
-
 const setSuccess = element => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
-
     errorDisplay.innerText = '';
     inputControl.classList.add('success');
     inputControl.classList.remove('error');
-
 };
-
 const isValidEmail = email => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -406,11 +393,9 @@ const validateInputs = () => {
     }
     if ((usernameValue !== '') && (emailValue !== '') && (isValidEmail(emailValue))) {
         ecranDeBienvenue.style.display = "none"
-
         containerDeQuestion.style.display = "block"
         console.log(ecranDeResultat)
         console.log(containerDeQuestion);
-
         console.log(ecranDeBienvenue);
         quiz.afficherQuestionRecent()
 
