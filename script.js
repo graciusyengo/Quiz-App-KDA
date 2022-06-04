@@ -286,7 +286,7 @@ const questionsObject = [
     },
     {
         question: "  Quelle est la différence entre « undefined » et « null » en JavaScript? ",
-        reponses: ["pas difference", "abr"," undefined et null sont deux types distincts: undefined est un type indéfini tandis que null est un objet."],
+        reponses: ["pas different", "abr"," undefined et null sont deux types distincts: undefined est un type indéfini tandis que null est un objet.","parfois"],
         reponseId: "id2"
         
     },
