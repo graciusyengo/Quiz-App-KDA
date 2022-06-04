@@ -1,3 +1,4 @@
+(function(){
 let containerDeQuestion = document.querySelector(".containerDeQuestions")
 let ecranDeBienvenue = document.querySelector(".ecranDeBienvenue")
 let ecranDeResultat = document.querySelector(".ecranDeResultat")
@@ -10,7 +11,6 @@ function Quiz() {
     this.questions = [];
     this.reponses = {}
     this.indexQuestionRecent = 0;
-
     this.nombreCorrects = () => {
         let nbCorrect = 0;
         for (reponse of Object.values(this.reponses)) {
@@ -163,6 +163,9 @@ function Question(title, answers, answersCorrect, questionIndex) {
                 console.log("Est la reponse correcte ", reponse);
 
                 buttonSuivant.disabled = false;
+                if(quiz.indexQuestionRecent == quiz.questions.length-1){
+                    buttonSuivant.textContent="terminer"
+                }
                 buttonSuivant.style.opacity = "1"
 
                 if (document.querySelector('.brGreen')) {
@@ -200,7 +203,8 @@ function Question(title, answers, answersCorrect, questionIndex) {
         });
         buttonSuivant.addEventListener('click', () => {
             quiz.printResult()
-            if (quiz.indexQuestionRecent == quiz.questions.length) {
+            if (quiz.indexQuestionRecent === quiz.questions.length) {
+                buttonSuivant.textContent="Terminer"
                 quiz.afficheResultatQuitter();
             }
         })
@@ -238,9 +242,88 @@ const questionsObject = [
     },
     {
         question: "quel est le créateur du java script? ",
-        reponses: ["Brendan Eich", "steve jobs", "gracius", "bill gate"],
+        reponses: ["brendan", "simon kimbangu volé par le blanc", "gracius", "bill gate"],
         reponseId: "id1"
     },
+    {
+        question: "ce quoi java script ",
+        reponses: ["c'est un langage orienté objet il rend l'html dynamique(dhtml)", "c'est langage compilé pour concevoir les application desktop ", "c'est ne pas un langage juste un frame work java", "abr"],
+        reponseId: "id1"
+    },
+    {
+        question: "JavaScript est-il un langage sensible à la casse? ",
+        reponses: ["abr", "non ", "oui", "pas vraiment"],
+        reponseId: "id3"
+    },
+    {
+        question: " À quoi sert la fonction isNaN? ",
+        reponses: ["renvoie true si l'argument est un nombre", "renvoie true si l'argument n'est pas un nombre ", "abr", "renvoie false si l'argument est n'est pas un nombre"],
+        reponseId: "id2"
+    },
+    {
+        question: " comment declarer une variable avec une portée local? ",
+        reponses: ["let a", "var a ", "a", "const a"],
+        reponseId: "id2"
+        
+    },
+    {
+        question: "  Qui est le plus rapide, JavaScript ou ASP,node js? ",
+        reponses: ["ASP", "javascript", "sont pareil", "node js"],
+        reponseId: "id2"
+        
+    },
+    {
+        question: " comment declarer une variable avec une portée global? ",
+        reponses: ["let a", "var a ", "a", "const a"],
+        reponseId: "id3"
+        
+    },
+    {
+        question: " parmis ce declaration des fonction le quel l'hosting n'est pas appliqué? ",
+        reponses: [" function nomFonction(){}", " function()=>{} ", "var speak=function(){}", "abr"],
+        reponseId: "id3"
+        
+    },
+    {
+        question: "  Quelle est la différence entre « undefined » et « null » en JavaScript? ",
+        reponses: ["pas difference", "abr"," undefined et null sont deux types distincts: undefined est un type indéfini tandis que null est un objet."],
+        reponseId: "id2"
+        
+    },
+    {
+        question: "  Quelle entreprise a développé JavaScript? ",
+        reponses: ["microsoft", "apple","google","netscape"],
+        reponseId: "id4"
+        
+    },
+    {
+        question: " De combien de façons un code JavaScript peut-il être intégré dans un fichier HTML?",
+        reponses: ["2 façons", "4 façons","trois façons","abr"],
+        reponseId: "id4"
+        
+    },
+    {
+        question: "   A quoi sert le mot-clé « this » en JavaScript? ",
+        reponses: ["sert à rien", "il fait reference à l'objet actuel","pointer une variable","abr"],
+        reponseId: "id2"
+        
+    },
+    {
+        question: "  C'est quoi un prototype ",
+        reponses: ["c'est quand un objet herite des proprietés et methode d'un autre objet "," Une propriété est une caractéristique d'un objet qui décrit souvent des attributs associés à une structure de données. ","abr"],
+        reponseId: "id1"
+        
+    },
+    {
+        question: "Que renvoie l’ex´ecution du code alert(4 >= 4 && (2 > 3 || (6%3 < 1))) ; ? ",
+        reponses: ["erreur "," Undefined ","false","true"],
+        reponseId: "id4"
+        
+    },
+
+    
+    
+
 ];
 
 for (let i = 0; i < questionsObject.length; i++) {
@@ -248,39 +331,6 @@ for (let i = 0; i < questionsObject.length; i++) {
     const q = new Question(elementQuestion.question, elementQuestion.reponses, elementQuestion.reponseId, i);
     quiz.addQuestion(q);
 }
-
-
-console.log(quiz)
-
-console.log(quiz)
-let question3 = new Question("a quoi servent une promesse? ", [" Elles permettent d'écrire des programmes Javascript de manière  bloquante", " Elles permettent d'écrire des programmes Javascript de manière non bloquante et non bloquant", " Elles permettent d'écrire des programmes Javascript de manière non bloquante", "abr"], "id2", 3)
-let question4 = new Question(" ", ["glooum", "chante", "patte"], "id2", 4)
-let question5 = new Question("Quelle est la différence entre == et === ?", ["== ne compare pas les valeurs et ne compare pas le type tandique === compare les valeurs uniquement pas le type", " == compare uniquement les valeur,pas le type tandique === compare les valeurs et leurs type", "abr", " == affecte une valeurs à une variable tandisque === ne fais pas cèla"], "id3", 5)
-let question6 = new Question("quel est le créateur du java script? ", ["Brendan Eich", "steve jobs", "gracius", "bill gate"], "id1", 6)
-let question7 = new Question("quel est le créateur du java script? ", ["Brendan Eich", "steve jobs", "gracius", "bill gate"], "id1", 7)
-let question8 = new Question("quel est le créateur du java script? ", ["Brendan Eich", "steve jobs", "gracius", "bill gate"], "id1", 8)
-let question9 = new Question("quel est le créateur du java script? ", ["Brendan Eich", "steve jobs", "gracius", "bill gate"], "id1", 9)
-let question10 = new Question("quel est le créateur du java script? ", ["Brendan Eich", "steve jobs", "gracius", "bill gate"], "id1", 10)
-let question11 = new Question("java script fait du dhtml? ", ["non", "pas du tout", "parfois", "oui"], "id4", 11)
-let question12 = new Question("que ce qui passe lorsque une fonction n'a pas de valeurs de return ? ", ["affiche rien", "abr", "affiche undefined", "null"], "id3", 12)
-let question13 = new Question("que signifie l'accronyme dom? ", ["document objet model", "document of objet", "document of tree", "abr", "document model objet"], "id1", 13)
-let question14 = new Question("quel est le créateur du java script? ", ["Brendan Eich", "steve jobs", "gracius", "bill gate"], "id1", 14)
-let question15 = new Question("ce quoi un callback? ", [" c'est call qui signifie appeler et back signifie derrière équivaut à faire l'appel derrière", "c'est une fonction qu'on passe en parametre", "c'est fonction anonyme", "pas de bonnes reponses"], "id2",)
-
-
-quiz.addQuestion(question3)
-quiz.addQuestion(question4)
-quiz.addQuestion(question5)
-quiz.addQuestion(question6)
-quiz.addQuestion(question7)
-quiz.addQuestion(question8)
-quiz.addQuestion(question9)
-quiz.addQuestion(question10)
-quiz.addQuestion(question11)
-quiz.addQuestion(question12)
-quiz.addQuestion(question13)
-quiz.addQuestion(question14)
-quiz.addQuestion(question15)
 
 // dynamisation des mes elements variables
 let reponse = document.querySelectorAll(".reponse")
@@ -316,8 +366,6 @@ formulairePrincipal.addEventListener('submit', e => {
     validateInputs()
 
 })
-
-
 const setError = (element, message) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
@@ -367,14 +415,6 @@ const validateInputs = () => {
         quiz.afficherQuestionRecent()
 
     }
-
 }
-
-
-
-
-
-
-
-
+})()
 
