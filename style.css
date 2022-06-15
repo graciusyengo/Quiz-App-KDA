@@ -50,7 +50,8 @@ p{
 #formulairePrincipal button {
   cursor: pointer;
   background-color: #028A3D;
-  border-radius: 4px;
+  border:none;
+  box-shadow: 3px 3px 3px rgb(194, 191, 191);
   color: #fff;
   font-weight: 500;
   display: block;
@@ -58,6 +59,7 @@ p{
   padding: 10px;
   margin: 50px auto 10px auto;
   width: 200px;
+  
 }
 
 .input-control {
@@ -127,7 +129,7 @@ height: 50px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 32px;
     /* or 158% */
     
@@ -166,11 +168,14 @@ height: 50px;
 
 }
 .reponseQuestion{
+  display: flex;
+  align-items: center;
   border: 1px solid solid #f0f0f0; ;
   margin: 20px 20px 20px 20px;
 }
 .reponseQuestion label{
-  margin-left: 10px;
+
+  margin-left: 12px;
 }
 input{
   appearance: none;
@@ -178,6 +183,7 @@ input{
   width: 25px;
   border: 1px solid #dddddd ;
   border-radius: 25px;
+
 }
 input:checked{
   background-color: green;
@@ -197,7 +203,8 @@ input:checked{
 
 .suivantButton{
   background: #73ac3e;
-  border-radius: 4px;
+  border:none;
+  box-shadow: 3px 3px 3px rgb(194, 191, 191);
   height: 42px;
   color: #fff;
   display: block;
@@ -207,8 +214,10 @@ input:checked{
   width: 90%;
 }
 .exitButton{
+  cursor: pointer;
   color: #fff;
-  border-radius: 4px;
+  border:none;
+  box-shadow: 3px 3px 3px rgb(194, 191, 191);
   display: block;
   font-size: 16px;
   padding: 10px;
@@ -219,6 +228,7 @@ input:checked{
 }
 
 .ecranDeResultat {
+  cursor: pointer;
  display: none;
 flex-direction: column;
 align-items: center;
