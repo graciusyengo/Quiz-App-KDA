@@ -148,11 +148,14 @@ function Question(title, answers, answersCorrect, questionIndex) {
             elementInputRadio.setAttribute("name", "choix")
             elementInputRadio.setAttribute("id", "formulaireQuestionRadio")
             let elementLabelDeInputRadio = document.createElement("label")
-            elementLabelDeInputRadio.setAttribute("for", "formulaireQuestionRadio")
+          
             elementLabelDeInputRadio.setAttribute("name", "choix")
+        
             elementLabelDeInputRadio.textContent = answer
             console.log(index);
-            elementInputRadio.id = `id${index + 1}`;// index comme parametre recupere les indices du tableau answer 
+            elementInputRadio.id = `id${index + 1}`;
+            // index comme parametre recupere les indices du tableau answer 
+            elementLabelDeInputRadio.setAttribute("for", `id${index + 1}`)
             inputContainer.append(elementInputRadio)
             inputContainer.append(elementLabelDeInputRadio)
             //si tu clique sur le reponseQuestion
@@ -380,7 +383,7 @@ const validateInputs = () => {
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
     if (usernameValue === '') {
-        setError(username, "N'oublie pas de renseigner ce champs");
+        setError(username, "N'oublie pas de renseigner ce champs avant de commencer le quiz");
     } else {
         setSuccess(username);
     }
